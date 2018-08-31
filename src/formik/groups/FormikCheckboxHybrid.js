@@ -5,7 +5,6 @@ import Checkbox from 'calcite-react/Checkbox';
 const FormikCheckbox = ({
   field,
   form,
-  label,
   value,
   arrayHelpers = null,
   disabled = false,

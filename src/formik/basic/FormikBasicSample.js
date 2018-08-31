@@ -4,6 +4,7 @@ import { Formik, Field } from 'formik';
 import FormikTextField from './FormikTextField';
 import FormikRadio from './FormikRadio';
 import FormikSelect from './FormikSelect';
+import FormikCheckbox from './FormikCheckbox';
 
 import Button from 'calcite-react/Button';
 import { MenuItem } from 'calcite-react/Menu';
@@ -18,7 +19,8 @@ const user = {
   email: '',
   token: '',
   region: '',
-  subscription: ''
+  subscription: '',
+  notify: false
 };
 
 const regionOptions = [
@@ -175,6 +177,12 @@ export default class FormikBasicSample extends Component {
                 <FormHelperText>
                   {(touched.subscription && errors.subscription) || null}
                 </FormHelperText>
+              </FormControl>
+
+              <FormControl>
+                <Field component={FormikCheckbox} name="notify" value="true">
+                  Sign me up for notifications
+                </Field>
               </FormControl>
 
               <FormControl>

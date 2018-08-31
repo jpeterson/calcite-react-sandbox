@@ -12,7 +12,7 @@ import Tabs, {
 
 class FormikSamples extends React.Component {
   state = {
-    activeTabIndex: 1
+    activeTabIndex: 0
   };
 
   render() {

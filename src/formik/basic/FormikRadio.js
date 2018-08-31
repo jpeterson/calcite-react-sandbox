@@ -2,14 +2,7 @@ import React from 'react';
 
 import Radio from 'calcite-react/Radio';
 
-const FormikRadio = ({
-  field,
-  form,
-  label,
-  value,
-  disabled = false,
-  ...props
-}) => {
+const FormikRadio = ({ field, form, value, disabled = false, ...props }) => {
   const { name } = field;
   const { touched, errors, values, isSubmitting, setFieldValue } = form;
 
