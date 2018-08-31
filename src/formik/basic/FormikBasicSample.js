@@ -19,13 +19,15 @@ const user = {
   email: '',
   token: '',
   region: '',
-  subscription: '',
+  subscription: 'user',
   notify: false
 };
 
 const regionOptions = [
+  { name: 'Africa', value: 'africa' },
   { name: 'Asia', value: 'asia' },
   { name: 'Europe', value: 'europe' },
+  { name: 'Oceania', value: 'oceania' },
   { name: 'North America', value: 'northamerica' },
   { name: 'South America', value: 'southamerica' }
 ];
@@ -49,19 +51,20 @@ export default class FormikBasicSample extends Component {
   validate(values) {
     let errors = {};
     if (!values.name) {
-      errors.name = 'Required';
+      errors.name = 'You are legally required to have a name 🤨';
     }
 
     if (!values.email.includes('@')) {
-      errors.email = 'Must have an @';
+      errors.email = 'Most emails have an @...';
     }
 
     if (values.token.length < 10) {
-      errors.token = 'Must be at least 10 characters';
+      errors.token =
+        'That token is weak sauce. Throw a few more characters in there.';
     }
 
     if (!values.region) {
-      errors.region = 'Required';
+      errors.region = 'You do live on 🌎, right?';
     }
 
     if (!values.subscription) {

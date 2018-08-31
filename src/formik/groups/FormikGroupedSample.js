@@ -6,13 +6,14 @@ import FormikCheckboxHybrid from './FormikCheckboxHybrid';
 import Button from 'calcite-react/Button';
 import Form, {
   FormControl,
+  Legend,
+  Fieldset,
   FormControlLabel,
   FormHelperText
 } from 'calcite-react/Form';
 
 const user = {
-  save: false,
-  sdks: ['ios']
+  sdks: []
 };
 
 const sdkOptions = [
@@ -38,7 +39,7 @@ export default class FormikGroupedSample extends Component {
   validate(values) {
     let errors = {};
     if (!values.sdks.length) {
-      errors.sdks = 'Required';
+      errors.sdks = "C'mon, you must have at least one favorite!";
     }
 
     return errors;
@@ -54,8 +55,6 @@ export default class FormikGroupedSample extends Component {
   render() {
     return (
       <div>
-        <h1>Formik Grouped Sample</h1>
-
         <Formik
           initialValues={user}
           validate={this.validate}
@@ -73,33 +72,36 @@ export default class FormikGroupedSample extends Component {
             <Form onSubmit={handleSubmit}>
               <h2>Connect your account</h2>
 
-              <Field
-                component={FormikCheckboxHybrid}
-                name="save"
-                id={'save'}
-                value="true"
+              <FormControl
+                success={touched.sdks && !errors.sdks ? true : false}
+                error={touched.sdks && errors.sdks ? true : false}
               >
-                Would you like to save?
-              </Field>
-              <hr />
-              <FieldArray name="sdks">
-                {arrayHelpers => (
-                  <div>
-                    {sdkOptions.map((sdk, i) => (
-                      <Field
-                        component={FormikCheckboxHybrid}
-                        name="sdks"
-                        value={sdk.value}
-                        id={sdk.value}
-                        key={sdk.value}
-                        arrayHelpers={arrayHelpers}
-                      >
-                        {sdk.name}
-                      </Field>
-                    ))}
-                  </div>
-                )}
-              </FieldArray>
+                <Fieldset name="sdks">
+                  <Legend>Choose your SDKs:</Legend>
+                </Fieldset>
+
+                <FieldArray name="sdks">
+                  {arrayHelpers => (
+                    <div>
+                      {sdkOptions.map((sdk, i) => (
+                        <Field
+                          component={FormikCheckboxHybrid}
+                          name="sdks"
+                          value={sdk.value}
+                          id={sdk.value}
+                          key={sdk.value}
+                          arrayHelpers={arrayHelpers}
+                        >
+                          {sdk.name}
+                        </Field>
+                      ))}
+                    </div>
+                  )}
+                </FieldArray>
+                <FormHelperText>
+                  {(touched.sdks && errors.sdks) || null}
+                </FormHelperText>
+              </FormControl>
 
               <FormControl>
                 <Button type="submit" disabled={isSubmitting}>
