@@ -70,7 +70,7 @@ export default class FormikGroupedSample extends Component {
             isSubmitting
           }) => (
             <Form onSubmit={handleSubmit}>
-              <h2>Connect your account</h2>
+              <h2>"Grouped" Form Elements</h2>
 
               <FormControl
                 success={touched.sdks && !errors.sdks ? true : false}

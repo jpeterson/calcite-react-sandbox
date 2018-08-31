@@ -84,7 +84,6 @@ export default class FormikBasicSample extends Component {
   render() {
     return (
       <div>
-        <h1>Formik Basic Sample</h1>
         <Formik
           initialValues={user}
           validate={this.validate}
@@ -100,7 +99,7 @@ export default class FormikBasicSample extends Component {
             isSubmitting
           }) => (
             <Form onSubmit={handleSubmit}>
-              <h2>Connect your account</h2>
+              <h2>Basic Form Elements</h2>
 
               <FormControl
                 success={touched.name && !errors.name ? true : false}
@@ -204,11 +203,6 @@ export default class FormikBasicSample extends Component {
           - Formik's <Form> can't be used with Calcite React's <Form>. Instead, skip the 
             nicety of Formik's component and manually add the onSubmit to the CR <Form>.
             https://github.com/jaredpalmer/formik#form-
-
-          - Something is keeping TextField from working properly... it appears the inner input
-            is not getting an id or name. Looks like it is getting those attributes in the 
-            Calcite React storybook though... why? Setting id={name} and name={name} seems
-            to work... but wouldn't work if there were 2 forms with the same named element, right?
           `}
         </pre>
       </div>
