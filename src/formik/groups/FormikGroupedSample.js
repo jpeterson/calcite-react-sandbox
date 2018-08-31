@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Formik, Field, FieldArray } from 'formik';
 
-import FormikCheckbox from './FormikCheckbox';
+import FormikCheckboxHybrid from './FormikCheckboxHybrid';
 
 import Button from 'calcite-react/Button';
 import Form, {
@@ -74,7 +74,7 @@ export default class FormikGroupedSample extends Component {
               <h2>Connect your account</h2>
 
               <Field
-                component={FormikCheckbox}
+                component={FormikCheckboxHybrid}
                 name="save"
                 id={'save'}
                 value="true"
@@ -87,10 +87,10 @@ export default class FormikGroupedSample extends Component {
                   <div>
                     {sdkOptions.map((sdk, i) => (
                       <Field
-                        component={FormikCheckbox}
+                        component={FormikCheckboxHybrid}
                         name="sdks"
                         value={sdk.value}
-                        id={sdk.value + i}
+                        id={sdk.value}
                         key={sdk.value}
                         arrayHelpers={arrayHelpers}
                       >
@@ -106,6 +106,7 @@ export default class FormikGroupedSample extends Component {
                   Submit
                 </Button>
               </FormControl>
+              <pre>{JSON.stringify(values, null, 2)}</pre>
             </Form>
           )}
         </Formik>

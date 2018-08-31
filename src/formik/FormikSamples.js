@@ -1,7 +1,6 @@
 import React from 'react';
 
-import FormikFirstSample from './one/FormikFirstSample';
-import FormikSecondSample from './two/FormikSecondSample';
+import FormikBasicSample from './basic/FormikBasicSample';
 import FormikGroupedSample from './groups/FormikGroupedSample';
 
 import Tabs, {
@@ -13,7 +12,7 @@ import Tabs, {
 
 class FormikSamples extends React.Component {
   state = {
-    activeTabIndex: 2
+    activeTabIndex: 1
   };
 
   render() {
@@ -23,16 +22,12 @@ class FormikSamples extends React.Component {
         onTabChange={activeTabIndex => this.setState({ activeTabIndex })}
       >
         <TabNav>
-          <TabTitle>Approach One</TabTitle>
-          <TabTitle>Approach Two</TabTitle>
+          <TabTitle>Basic</TabTitle>
           <TabTitle>Grouped</TabTitle>
         </TabNav>
         <TabContents>
           <TabSection>
-            <FormikFirstSample />
-          </TabSection>
-          <TabSection>
-            <FormikSecondSample />
+            <FormikBasicSample />
           </TabSection>
           <TabSection>
             <FormikGroupedSample />

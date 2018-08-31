@@ -43,7 +43,7 @@ const subscriptionOptions = [
   }
 ];
 
-export default class FormikSecondSample extends Component {
+export default class FormikBasicSample extends Component {
   validate(values) {
     let errors = {};
     if (!values.name) {
@@ -79,33 +79,7 @@ export default class FormikSecondSample extends Component {
   render() {
     return (
       <div>
-        <h1>Formik Second Sample</h1>
-        <p>
-          This approach puts all the Calcite React stuff into the Formik form
-          itself. This leads to a more verbose form, but full control over
-          Calcite React form components.
-        </p>
-        Pros:
-        <ul>
-          <li>
-            Wrapper components won't be bound to enclosing Form components
-          </li>
-          <li>
-            Allows for full control over all Calcite React form component props
-            (FormControl's "horizontal" or "noValidation" props, for example)
-          </li>
-          <li>Inline with the Calcite React composition model</li>
-        </ul>
-        Cons:
-        <ul>
-          <li>
-            To gain control over Calcite React Form component props, we'd need
-            to make new props at the top level like "CalciteProps" or something,
-            then bind those props to Calcite React props in our wrapper
-            component
-          </li>
-          <li>Less abstraction, which means more code to write</li>
-        </ul>
+        <h1>Formik Basic Sample</h1>
         <Formik
           initialValues={user}
           validate={this.validate}
@@ -128,12 +102,7 @@ export default class FormikSecondSample extends Component {
                 error={touched.name && errors.name ? true : false}
               >
                 <FormControlLabel htmlFor="name">Name:</FormControlLabel>
-                <Field
-                  component={FormikTextField}
-                  type="text"
-                  name="name"
-                  id="name"
-                />
+                <Field component={FormikTextField} type="text" name="name" />
                 <FormHelperText>
                   {(touched.name && errors.name) || null}
                 </FormHelperText>
@@ -144,12 +113,7 @@ export default class FormikSecondSample extends Component {
                 error={touched.email && errors.email ? true : false}
               >
                 <FormControlLabel htmlFor="email">Email:</FormControlLabel>
-                <Field
-                  component={FormikTextField}
-                  type="email"
-                  name="email"
-                  id="email"
-                />
+                <Field component={FormikTextField} type="email" name="email" />
                 <FormHelperText>
                   {(touched.email && errors.email) || null}
                 </FormHelperText>
@@ -164,7 +128,6 @@ export default class FormikSecondSample extends Component {
                   component={FormikTextField}
                   type="password"
                   name="token"
-                  id="token"
                 />
                 <FormHelperText>
                   {(touched.token && errors.token) || null}
@@ -176,12 +139,7 @@ export default class FormikSecondSample extends Component {
                 error={touched.region && errors.region ? true : false}
               >
                 <FormControlLabel htmlFor="token">Region:</FormControlLabel>
-                <Field
-                  component={FormikSelect}
-                  type="password"
-                  name="region"
-                  id="region"
-                >
+                <Field component={FormikSelect} type="password" name="region">
                   {regionOptions.map(region => (
                     <MenuItem key={region.value} value={region.value}>
                       {region.name}
@@ -209,7 +167,6 @@ export default class FormikSecondSample extends Component {
                     key={subscription.value}
                     component={FormikRadio}
                     name="subscription"
-                    id="subscription"
                     value={subscription.value}
                   >
                     {subscription.name}
@@ -225,6 +182,7 @@ export default class FormikSecondSample extends Component {
                   Submit
                 </Button>
               </FormControl>
+              <pre>{JSON.stringify(values, null, 2)}</pre>
             </Form>
           )}
         </Formik>

@@ -6,6 +6,7 @@ const FormikCheckbox = ({
   field,
   form,
   label,
+  value,
   arrayHelpers = null,
   disabled = false,
   ...props
@@ -16,9 +17,9 @@ const FormikCheckbox = ({
   const handleChange = e => {
     if (arrayHelpers) {
       if (e.target.checked) {
-        arrayHelpers.push(props.value);
+        arrayHelpers.push(value);
       } else {
-        const i = values[name].indexOf(props.value);
+        const i = values[name].indexOf(value);
         arrayHelpers.remove(i);
       }
     } else {
@@ -28,7 +29,7 @@ const FormikCheckbox = ({
 
   const isChecked = () => {
     if (arrayHelpers) {
-      return values[name].includes(props.value);
+      return values[name].includes(value);
     }
     return values[name] === true;
   };
