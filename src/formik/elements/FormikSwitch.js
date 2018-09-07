@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Checkbox from 'calcite-react/Checkbox';
+import Switch from 'calcite-react/Switch';
 
-const FormikCheckbox = ({ field, form, value, disabled = false, ...props }) => {
+const FormikSwitch = ({ field, form, value, disabled = false, ...props }) => {
   const { name, fieldValue } = field;
   const { touched, errors, isSubmitting, setFieldValue } = form;
 
   return (
-    <Checkbox
+    <Switch
       {...props}
       {...field}
       value={value}
@@ -20,4 +20,4 @@ const FormikCheckbox = ({ field, form, value, disabled = false, ...props }) => {
   );
 };
 
-export default FormikCheckbox;
+export default FormikSwitch;

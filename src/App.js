@@ -31,7 +31,7 @@ class App extends Component {
         >
           <TabNav>
             <TabTitle>Formik</TabTitle>
-            <TabTitle>???</TabTitle>
+            <TabTitle>Icons</TabTitle>
           </TabNav>
           <TabContents>
             <TabSection>
