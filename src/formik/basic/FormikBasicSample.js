@@ -143,7 +143,7 @@ export default class FormikBasicSample extends Component {
                 error={touched.region && errors.region ? true : false}
               >
                 <FormControlLabel htmlFor="token">Region:</FormControlLabel>
-                <Field component={FormikSelect} type="password" name="region">
+                <Field component={FormikSelect} name="region">
                   {regionOptions.map(region => (
                     <MenuItem key={region.value} value={region.value}>
                       {region.name}
@@ -182,7 +182,11 @@ export default class FormikBasicSample extends Component {
               </FormControl>
 
               <FormControl>
-                <Field component={FormikCheckbox} name="notify" value="true">
+                <Field
+                  component={FormikCheckbox}
+                  name="notify"
+                  value="subscribe"
+                >
                   Sign me up for notifications
                 </Field>
               </FormControl>

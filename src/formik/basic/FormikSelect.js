@@ -19,7 +19,6 @@ const FormikSelect = ({
       {...field}
       onChange={e => setFieldValue(name, e)}
       selectedValue={field.value}
-      type={type}
       success={touched[name] && !errors[name] ? true : false}
       error={touched[name] && errors[name] ? true : false}
       disabled={isSubmitting || disabled}

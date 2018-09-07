@@ -78,29 +78,29 @@ export default class FormikGroupedSample extends Component {
               >
                 <Fieldset name="sdks">
                   <Legend>Choose your SDKs:</Legend>
-                </Fieldset>
 
-                <FieldArray name="sdks">
-                  {arrayHelpers => (
-                    <div>
-                      {sdkOptions.map((sdk, i) => (
-                        <Field
-                          component={FormikCheckboxHybrid}
-                          name="sdks"
-                          value={sdk.value}
-                          id={sdk.value}
-                          key={sdk.value}
-                          arrayHelpers={arrayHelpers}
-                        >
-                          {sdk.name}
-                        </Field>
-                      ))}
-                    </div>
-                  )}
-                </FieldArray>
-                <FormHelperText>
-                  {(touched.sdks && errors.sdks) || null}
-                </FormHelperText>
+                  <FieldArray name="sdks">
+                    {arrayHelpers => (
+                      <div>
+                        {sdkOptions.map((sdk, i) => (
+                          <Field
+                            component={FormikCheckboxHybrid}
+                            name="sdks"
+                            value={sdk.value}
+                            id={sdk.value}
+                            key={sdk.value}
+                            arrayHelpers={arrayHelpers}
+                          >
+                            {sdk.name}
+                          </Field>
+                        ))}
+                      </div>
+                    )}
+                  </FieldArray>
+                  <FormHelperText>
+                    {(touched.sdks && errors.sdks) || null}
+                  </FormHelperText>
+                </Fieldset>
               </FormControl>
 
               <FormControl>
