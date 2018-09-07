@@ -136,7 +136,7 @@ export default class FormikBasicSample extends Component {
   }
 
   onSubmit(values, actions) {
-    console.log(values, actions);
+    console.log(values);
     setTimeout(() => {
       actions.setSubmitting(false);
     }, 1000);

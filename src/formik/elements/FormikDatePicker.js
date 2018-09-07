@@ -8,8 +8,6 @@ class FormikDatePicker extends Component {
   };
 
   onDateChange = date => {
-    console.log(date);
-
     this.props.form.setFieldValue(this.props.field.name, date);
   };
 
