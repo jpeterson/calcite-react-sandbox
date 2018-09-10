@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FormikBasicSample from './basic/FormikBasicSample';
+import FormikYupSample from './basic/FormikYupSample';
 
 import Tabs, {
   TabNav,
@@ -28,7 +29,9 @@ class FormikSamples extends React.Component {
           <TabSection>
             <FormikBasicSample />
           </TabSection>
-          <TabSection>Coming Soon...</TabSection>
+          <TabSection>
+            <FormikYupSample />
+          </TabSection>
         </TabContents>
       </Tabs>
     );
