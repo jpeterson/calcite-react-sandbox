@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import FormikSamples from './formik';
+import IconDemo from './icons/IconDemo';
 
 import Tabs, {
   TabNav,
@@ -37,7 +38,9 @@ class App extends Component {
             <TabSection>
               <FormikSamples />
             </TabSection>
-            <TabSection>Coming Soon...</TabSection>
+            <TabSection>
+              <IconDemo />
+            </TabSection>
           </TabContents>
         </Tabs>
       </div>
