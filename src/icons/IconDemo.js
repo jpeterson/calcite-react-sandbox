@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import TextField from 'calcite-react/TextField';
 import Checkbox from 'calcite-react/Checkbox';
+import Slider from 'calcite-react/Slider';
 import Form, { FormControl, FormControlLabel } from 'calcite-react/Form';
 
 import BananaIcon from 'calcite-ui-icons-react/BananaIcon';
@@ -40,6 +41,14 @@ export default class IconDemo extends Component {
               type="number"
               value={this.state.size}
               style={{ width: '150px' }}
+              onChange={e =>
+                this.setState({ size: e.target.value || undefined })
+              }
+            />
+            <Slider
+              min={0}
+              max={500}
+              value={this.state.size}
               onChange={e =>
                 this.setState({ size: e.target.value || undefined })
               }
