@@ -7,8 +7,7 @@ import { Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 // Calcite React
-import { ThemeProvider } from 'styled-components';
-import CalciteTheme from 'calcite-react/theme/CalciteTheme';
+import CalciteThemeProvider from 'calcite-react/CalciteThemeProvider';
 
 // PWA
 import registerServiceWorker from './registerServiceWorker';
@@ -22,11 +21,11 @@ process.env.NODE_ENV !== 'production' ? (basename = '') : (basename = homepage);
 
 // Render application
 ReactDOM.render(
-  <ThemeProvider theme={CalciteTheme}>
+  <CalciteThemeProvider>
     <BrowserRouter basename={basename}>
       <Route path="/" component={App} />
     </BrowserRouter>
-  </ThemeProvider>,
+  </CalciteThemeProvider>,
   document.getElementById('root')
 );
 registerServiceWorker();

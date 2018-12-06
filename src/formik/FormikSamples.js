@@ -8,7 +8,7 @@ import Tabs, {
   TabTitle,
   TabContents,
   TabSection
-} from 'calcite-react/Tab';
+} from 'calcite-react/Tabs';
 
 class FormikSamples extends React.Component {
   state = {

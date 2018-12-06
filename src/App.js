@@ -8,7 +8,7 @@ import Tabs, {
   TabTitle,
   TabContents,
   TabSection
-} from 'calcite-react/Tab';
+} from 'calcite-react/Tabs';
 
 import logo from './esri.png';
 
@@ -36,6 +36,21 @@ class App extends Component {
           </TabNav>
           <TabContents>
             <TabSection>
+              <span role="img" aria-label="warning">
+                ⚠️
+              </span>{' '}
+              This demo is obsolete! Calcite React now supports Formik
+              integration out of the box.{' '}
+              <a
+                href="https://calcite-react.netlify.com/text-field#with-formik"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Here's an example
+              </a>{' '}
+              <span role="img" aria-label="warning">
+                ⚠️
+              </span>
               <FormikSamples />
             </TabSection>
             <TabSection>
